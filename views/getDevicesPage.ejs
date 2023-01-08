@@ -9,10 +9,10 @@
 <body>
   <h1>Devices Working</h1>
 
-  <form action="/home/createNewDevice" method="POST">
+  <form action="/createNewDevice" method="POST">
     <div class="form-group">
         <label for="serialNumber">serialNumber</label>
-        <input type="text" class="form-control" id="serialNumber" name="serialNumber" placeholder="Issue Subject...">
+        <input type="text" class="form-control" id="serialNumber" name="serialNumber" placeholder="Enter serial number here...">
     </div>
     <button type="submit" class="btn btn-warning">Add</button>
 </form>
@@ -24,6 +24,7 @@
         <li class="list-group-item justify-content-center mt-5 card">
             <h5><strong>Serial Number</strong>: <%= devices[i].serialNumber%></h5>
             <h5><strong>Last Modified</strong>: <%= devices[i].lastModified%></h5>
+            <a href="/edit/<%= devices[i]._id %>">Edit</a>
         </li>
       <% } %>
     </ul>

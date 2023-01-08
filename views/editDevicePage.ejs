@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Item</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <section>
+        <h1><h1>This is the Edit Page!</h1></h1>
+        <section>
+            <ul>
+                <% devicedetailsList.forEach(devicedetails => { %>
+                    <% if (devicedetails._id==idDevice) { %>
+                        <li>
+                            <form action="/edit/update/<%= devicedetails._id %>" method="POST">
+                                <label for="serialNumber">serialNumber</label>
+                                <input type="text" value="<%= devicedetails.textinput %>" name="serialNumber">
+                                
+                                <button type="submit" class="confirm">Confirm</button>
+                                <a href="/" class="cancel">Cancel</a>
+                            </form>
+                        </li>
+                        <% } else { %>
+                            <li>
+                                <div>
+                                    <%= devicedetails.textinput %>
+                                </div>
+
+                                <a href="/edit/<%= devicedetails._id %>">Edit</a>
+                                <a href="/edit/remove/<%= devicedetails._id %>" class="remove">Cancel</a>
+                            </li>
+                            <% } %>
+                                <% }) %>
+            </ul>
+        </section>
+    </section>
+</body>
+</html>

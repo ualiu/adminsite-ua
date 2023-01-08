@@ -4,6 +4,7 @@ const express = require('express')
 const router = express.Router()
 const editController = require('../controllers/edit')
 
-router.post('/:id', editController.updateDevice)
+router.get('/:id', editController.getDeviceEdit)
+router.post('/update/:id', editController.updateDevice)
 
 module.exports = router
