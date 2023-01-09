@@ -9,6 +9,7 @@ router.get('/', homeController.getMain)
 router.post('/createNewDevice', homeController.createNewDevice)
 
 router.get('/devices', homeController.getDevicesPage)
+router.get('/activeDevices', homeController.getActiveDevicesPage)
 router.get('/groups', homeController.getGroupsPage)
 router.get('/settings', homeController.getSettingsPage)
 
