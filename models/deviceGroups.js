@@ -1,24 +1,20 @@
 const mongoose = require('mongoose');
 const deviceGroupSchema = new mongoose.Schema({
 
-  lastTimeStamp: {
-    updatedAt: "updated_at"
-},
+//   lastTimeStamp: {
+//     updatedAt: "updated_at"
+// },
     
-    lastmodified: {
-    updatedAt: 'updated_at'
+lastModified: {
+  type: Date
 },
 lastModifiedBy: {
   type: String,
   default: 'Admin',
 },
-settingId: {
-  type: mongoose.Schema.Types.ObjectId,
-  ref: "DeviceSettings",
-},
 groupName: {
-    type: String,
-    default: 'Group Name'
+  type: String,
+  required: true
 },
 description: {
   type: String,
@@ -28,10 +24,17 @@ date: {
   type: Date,
   default: Date.now
 },
-
+device: {
+  type: mongoose.Schema.Types.ObjectId,
+  ref: "DeviceDetails",
 },
 
-{timestamps: true});
+}, {
+  timestamps: {
+    updatedAt: 'lastModified',
+  },
+});
+
 module.exports = mongoose.model('DeviceGroup', deviceGroupSchema);
 
 

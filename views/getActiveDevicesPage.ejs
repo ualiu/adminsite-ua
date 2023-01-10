@@ -19,8 +19,9 @@
     <ul class="list-group">
       <% for(var i=0; i<devices.length; i++) {%>
         <li class="list-group-item justify-content-center mt-5 card">
-            <h5><strong>Serial Number</strong>: <%= devices[i].serialNumber%></h5>
-            <h5><strong>Last Modified</strong>: <%= devices[i].lastModified%></h5>
+            <h5><strong>Serial number</strong>: <%= devices[i].serialNumber%></h5>
+            <h5><strong>Last modified on</strong>: <%= devices[i].lastModified%></h5>
+            <h5><strong>Last modified by</strong>: <%= devices[i].lastModifiedBy%></h5>
             <a class="btn btn-primary" href="/edit/<%= devices[i]._id %>">Edit</a>
         </li>
       <% } %>

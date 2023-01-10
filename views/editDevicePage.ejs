@@ -13,14 +13,14 @@
         <section>
             <ul>
                 <% devicedetailsList.forEach(devicedetails => { %>
-                    <% if (devicedetails._id==idDevice) { %>
+                    <!-- <% if (devicedetails._id==idDevice) { %> -->
                         <li>
                             <form action="/edit/update/<%= devicedetails._id %>" method="POST">
                                 <label for="serialNumber">serialNumber</label>
                                 <input type="text" value="<%= devicedetails.textinput %>" name="serialNumber">
                                 
                                 <button type="submit" class="confirm">Confirm</button>
-                                <a href="/" class="cancel">Cancel</a>
+                                <a class="btn btn-primary" href="/">Cancel</a>
                             </form>
                         </li>
                         <!-- <% } else { %>
